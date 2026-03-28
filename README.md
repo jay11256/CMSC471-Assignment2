@@ -28,3 +28,14 @@ All this information can help readers examine the records of officers who have b
 Each record in the data lists the name, rank, shield number, and precinct of each officer as of today and at the time of the incident; the age, race and gender of the complainant and the officer; a category describing the alleged misconduct; and whether the CCRB concluded the officers’ conduct violated NYPD rules.
 
 Every complaint in the database was fully investigated by the CCRB, which means, among other steps, a civilian provided a sworn statement to investigators. The CCRB was not able to reach conclusions in many cases, in part because the investigators must rely on the NYPD to hand over crucial evidence, such as footage from body-worn cameras. Often, the department is not forthcoming despite a legal duty to cooperate in CCRB investigations. The CCRB gets thousands of complaints per year but substantiates a tiny fraction of them. Allegations of criminal conduct by officers are typically investigated not by the CCRB but by state or federal prosecutors in conjunction with the NYPD’s Internal Affairs Bureau or the FBI.</details>
+
+
+What data do we want to visualize?
+- Complaints by 
+    - officer gender / complainant gender
+    - officer race / complainant race
+    - Represent discrimination by Offensive Language allegation type?
+    - Cumulative plot of discrimination
+        - -ISM is on the rise!!!!
+    
+- Something where we can normalize the data (data transformation "requirement")
