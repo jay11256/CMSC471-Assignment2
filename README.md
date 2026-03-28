@@ -37,5 +37,8 @@ What data do we want to visualize?
     - Represent discrimination by Offensive Language allegation type?
     - Cumulative plot of discrimination
         - -ISM is on the rise!!!!
+    - Gender - female mos get fewer complaints (cause there are fewer female mos)
+        - Same with race (white people)
     
 - Something where we can normalize the data (data transformation "requirement")
+- Filter (or don't filter) out exonerated/unsubstantiated claims
