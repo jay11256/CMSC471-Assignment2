@@ -7,3 +7,4 @@ Lying ideas
 - Two overlaid graphs, each following a different scale
 - Oversimplification of complex datasets
     - Using a small number of categories to sort data?
+- [Misleading risk representations by not normalizing](https://mucollective.northwestern.edu/files/2024-V-FRAMER.pdf) 
