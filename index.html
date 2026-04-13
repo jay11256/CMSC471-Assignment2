@@ -42,21 +42,39 @@
 
             <div class="info-grid">
                 <div class="info-box">
-                    <h3>Granular Integrity</h3>
-                    <ul>
-                        <li><strong>Substantiated (Solid):</strong> Complaints where the CCRB found sufficient evidence
-                            of misconduct.</li>
-                        <li><strong>Dismissed (Dashed):</strong> Includes "Unsubstantiated" (insufficient evidence) and
-                            "Exonerated" (incident occurred but was lawful).</li>
-                        <li><strong>Growth Gap:</strong> Highlights how most complaints do not result in a misconduct
-                            finding.</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>Why this Matters</h3>
-                    <p>Transparent visualization distinguishes between <em>accusations</em> and <em>findings</em>. By
-                        separating these outcomes, we see that while complaint volume may be high, the actual findings
-                        of misconduct follow a different trajectory.</p>
+                    <h3>White Hat Write Up</h3>
+                    <p>This visualization uses the New York City Civilian Complaint Review Board (CCRB) dataset, which
+                        documents civilian complaints filed against NYPD officers from the past 4 decades. The dataset
+                        categorizes allegations into 4 types: force, abuse of authority, discourtesy, and offensive
+                        language. These types are further broken down into subtypes, which we decided to not include to
+                        not overwhelm viewers. The dataset also records how each complain was resolved, which we
+                        included into the visual.
+                        <br><br>
+                        The raw data was transformed into the current visual through aggregation and selective
+                        exclusion. For each year, we summed the total amount of each complaint and their subtypes in
+                        order to create an accurate and representative plot. The original dataset ranges from 1985-2020,
+                        but we noticed that the data for 2020 was abnormally sparse (all occurrences summed to less than
+                        10). Even accounting for COVID-19 (which likely caused the drop in 2019), the values for 2020
+                        were far too low. We concluded that the current version of the dataset available to download was
+                        cutoff in the early 2020s, leading to unrepresentative values for that year, so we decided to
+                        excluded 2020 from the domain.
+                        <br><br>
+                        Each aesthetic aspect of the visual was designed to easily portray the types of complaints the
+                        CCRB has received over the years. Each allegation category gets its own color, making it easy to
+                        distinguish them for each other. Within these categories, we plotted the substatianted
+                        complaints and the dismissed complaints separately to ensure we highlight the “true” complaints.
+                        This was encoded by contrasting solid and dashed lines, as both dashed lines and dismissed
+                        complaints can be associated with “unrealness” while substantiated complaints can be associated
+                        with solidity.
+                        <br><br>
+                        Despite have 8 lines plotted on one graph, we maintain clarity by allowing the user to highlight
+                        different lines and by using tooltips. When hovering over any line in the legend, the
+                        corresponding line in the graph will retain its color while the others get grayed out,
+                        essentially “highlighting” the line the user is interested in. This allows users to view each
+                        line plot one at a time. When users hover over the plot itself, a tooltip for that year shows
+                        up. It displays the specific numerical values for all 8 lines, allowing users to make accurate
+                        comparisons between them.
+                    </p>
                 </div>
             </div>
         </div>
@@ -73,19 +91,8 @@
 
             <div class="info-grid">
                 <div class="info-box">
-                    <h3>Absolute Volume Focus</h3>
-                    <ul>
-                        <li><strong>Total Misconduct Events:</strong> This chart aggregates all recorded allegations to
-                            show the total volume.</li>
-                        <li><strong>Ethnic Disparity:</strong> Ranks demographics by absolute count to emphasize which
-                            groups generate the most records.</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>Black Hat Techniques</h3>
-                    <p><strong>Intentional Conflation:</strong> This chart purposefully ignores whether a complaint was
-                        substantiated or dismissed. By grouping all accusations together, it inflates the perceived
-                        frequency of misconduct and masks the fact that many entries were exonerated.</p>
+                    <h3>Black Hat Write Up</h3>
+                    <p>let charles cook</p>
                 </div>
             </div>
         </div>
