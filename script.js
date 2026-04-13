@@ -98,7 +98,7 @@ const blackSvg = d3.select("#black-chart")
 
 d3.json("data/race_complaints.json").then(data => {
     const x = d3.scaleBand().range([0, width]).domain(data.map(d => d.ethnicity)).padding(0.4);
-    const y = d3.scaleLinear().domain([0, d3.max(data, d => d.complaints) * 1.1]).range([height, 0]);
+    const y = d3.scaleLinear().domain([4500, d3.max(data, d => d.complaints) * 1.1]).range([height, 0]);
 
     blackSvg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
     blackSvg.append("g").call(d3.axisLeft(y).ticks(5));
