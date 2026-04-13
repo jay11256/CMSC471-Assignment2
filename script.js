@@ -40,6 +40,10 @@ d3.json("data/processed_allegations.json").then(data => {
         .style("text-anchor", "middle")
         .text("YEAR");
 
+    whiteSvg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(y).ticks(5).tickSize(-width).tickFormat(""));
+    
     const line = d3.line().x(d => x(d.year)).y(d => y(d.value)).curve(d3.curveMonotoneX);
 
     fadoTypes.forEach((type, i) => {
@@ -128,5 +132,10 @@ d3.json("data/race_complaints.json").then(data => {
         .attr("class", "axis-label")
         .style("text-anchor", "middle")
         .text("RACE OF MOS");
+
+    blackSvg.append("g")
+        .attr("class", "grid")
+        .call(d3.axisLeft(y).ticks(5).tickSize(-width).tickFormat(""));
+    
     
 });
