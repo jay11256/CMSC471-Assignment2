@@ -1,0 +1,30 @@
+[
+  {
+    "year": 2017,
+    "Public Order Efficiency": 1499,
+    "Safety Optimization": 359,
+    "Community Directness": 275,
+    "Authentic Engagement": 45
+  },
+  {
+    "year": 2018,
+    "Public Order Efficiency": 1500,
+    "Safety Optimization": 382,
+    "Community Directness": 338,
+    "Authentic Engagement": 61
+  },
+  {
+    "year": 2019,
+    "Public Order Efficiency": 1259,
+    "Safety Optimization": 173,
+    "Community Directness": 179,
+    "Authentic Engagement": 31
+  },
+  {
+    "year": 2020,
+    "Public Order Efficiency": 4,
+    "Safety Optimization": 0,
+    "Community Directness": 0,
+    "Authentic Engagement": 0
+  }
+]

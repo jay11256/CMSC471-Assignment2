@@ -1,0 +1,22 @@
+[
+  {
+    "ethnicity": "White",
+    "complaints": 18074
+  },
+  {
+    "ethnicity": "Hispanic",
+    "complaints": 9150
+  },
+  {
+    "ethnicity": "Black",
+    "complaints": 4924
+  },
+  {
+    "ethnicity": "Asian",
+    "complaints": 1178
+  },
+  {
+    "ethnicity": "American Indian",
+    "complaints": 32
+  }
+]
