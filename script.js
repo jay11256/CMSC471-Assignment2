@@ -139,7 +139,7 @@ d3.json("data/processed_allegations.json").then(data => {
     });
 });
 
-const blackPalette = ["#8B0000", "#D94444", "#FFFFFF"];
+const blackPalette = ["#8B0000", "#ff4f4f", "#ffd3d3"];
 
 // --- BLACK HAT VISUALIZATION (BAR CHART) ---
 const blackSvg = d3.select("#black-chart")
@@ -179,7 +179,7 @@ d3.json("data/race_complaints.json").then(data => {
         .attr("x", width / 2)
         .attr("class", "axis-label")
         .style("text-anchor", "middle")
-        .text("RACE OF MOS");
+        .text("RACE");
 
     blackSvg.append("g")
         .attr("class", "grid")
