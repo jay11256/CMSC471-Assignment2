@@ -31,3 +31,17 @@ What data do we want to visualize?
 
 - Something where we can normalize the data (data transformation "requirement")
 - ⭐ Filter (or don't filter) out exonerated/unsubstantiated claims 
+
+
+- Stuff to include in writeup
+
+    - White hat:
+        - Aggregation: For each year, complaints of each type are aggregated
+        - Sorted by board disposition
+
+    - Black hat:
+        - Aesthetically similar, however:
+        - Omits Asian, American Indian, and Other races, leaving out crucial information
+        - Fails to provide context about MOS demographics that would explain disparities in allegation count
+        - Truncates significant portion of graph, leading to misleading visual proportions
+        - The color scale also emphasizes the narrative that white MOS are significantly worse / receive more complaints
