@@ -22,6 +22,52 @@ d3.json("data/processed_allegations.json").then(data => {
     const yMax = d3.max(data, d => Math.max(...allKeys.map(k => d[k])));
     const y = d3.scaleLinear().domain([0, yMax * 1.1]).range([height, 0]);
 
+    const tooltip = d3.select("#white-tooltip");
+
+    // Invisible overlay to track mouse position across the chart
+    const bisectYear = d3.bisector(d => d.year).left;
+
+    const overlay = whiteSvg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "none")
+        .attr("pointer-events", "all");
+
+    // Vertical crosshair line
+    const crosshair = whiteSvg.append("line")
+        .attr("class", "crosshair")
+        .attr("y1", 0).attr("y2", height)
+        .attr("stroke", "var(--color-border-secondary)")
+        .attr("stroke-width", 1)
+        .attr("stroke-dasharray", "4,3")
+        .attr("display", "none");
+
+    overlay.on("mousemove", function (event) {
+        const [mx] = d3.pointer(event);
+        const year = Math.round(x.invert(mx));
+        const d = data.find(r => r.year === year);
+        if (!d) return;
+
+        crosshair.attr("display", null).attr("x1", x(year)).attr("x2", x(year));
+
+        const rows = fadoTypes.map(t =>
+            `<div style="display:flex;justify-content:space-between;gap:16px">
+        <span>${t}</span>
+        <span>Sub: <b>${d[t + "_Sub"] || 0}</b> &nbsp; Dis: <b>${d[t + "_Dis"] || 0}</b></span>
+      </div>`
+        ).join("");
+
+        tooltip
+            .style("display", "block")
+            .style("left", (event.clientX + 14) + "px")
+            .style("top", (event.clientY - 10) + "px")
+            .html(`<div style="font-weight:600;margin-bottom:4px">Year: ${year}</div>${rows}`);
+    })
+        .on("mouseleave", function () {
+            tooltip.style("display", "none");
+            crosshair.attr("display", "none");
+        });
+
     whiteSvg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x).tickFormat(d3.format("d")));
     whiteSvg.append("g").call(d3.axisLeft(y).ticks(5));
 
