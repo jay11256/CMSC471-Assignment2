@@ -43,7 +43,7 @@ d3.json("data/processed_allegations.json").then(data => {
     whiteSvg.append("g")
         .attr("class", "grid")
         .call(d3.axisLeft(y).ticks(5).tickSize(-width).tickFormat(""));
-    
+
     const line = d3.line().x(d => x(d.year)).y(d => y(d.value)).curve(d3.curveMonotoneX);
 
     fadoTypes.forEach((type, i) => {
@@ -93,6 +93,8 @@ d3.json("data/processed_allegations.json").then(data => {
     });
 });
 
+const blackPalette = ["#8B0000", "#D94444", "#FFFFFF"];
+
 // --- BLACK HAT VISUALIZATION (BAR CHART) ---
 const blackSvg = d3.select("#black-chart")
     .append("svg")
@@ -115,7 +117,7 @@ d3.json("data/race_complaints.json").then(data => {
         .attr("y", d => y(d.complaints))
         .attr("width", x.bandwidth())
         .attr("height", d => height - y(d.complaints))
-        .attr("fill", (d, i) => palette[i % palette.length])
+        .attr("fill", (d, i) => blackPalette[i % blackPalette.length])
         .attr("opacity", 0.8);
 
     blackSvg.append("text")
@@ -136,6 +138,6 @@ d3.json("data/race_complaints.json").then(data => {
     blackSvg.append("g")
         .attr("class", "grid")
         .call(d3.axisLeft(y).ticks(5).tickSize(-width).tickFormat(""));
-    
-    
+
+
 });
