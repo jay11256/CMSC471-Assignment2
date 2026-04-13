@@ -25,6 +25,21 @@ d3.json("data/processed_allegations.json").then(data => {
     whiteSvg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x).tickFormat(d3.format("d")));
     whiteSvg.append("g").call(d3.axisLeft(y).ticks(5));
 
+    whiteSvg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -50)
+        .attr("x", -height / 2)
+        .attr("class", "axis-label")
+        .style("text-anchor", "middle")
+        .text("TOTAL COMPLAINT VOLUME");
+
+    whiteSvg.append("text")
+        .attr("y", height + margin.bottom - 5)
+        .attr("x", width / 2)
+        .attr("class", "axis-label")
+        .style("text-anchor", "middle")
+        .text("YEAR");
+
     const line = d3.line().x(d => x(d.year)).y(d => y(d.value)).curve(d3.curveMonotoneX);
 
     fadoTypes.forEach((type, i) => {

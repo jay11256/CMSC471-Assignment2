@@ -24,5 +24,10 @@ What data do we want to visualize?
     - Gender - female mos get fewer complaints (cause there are fewer female mos)
         - Same with race (white people)
     
+    - Compute percent of compaints substantiated per group
+    - proportion of complains that involve offensive language by MOS ethnicity
+
+    - Filter by ages / year of complaint
+
 - Something where we can normalize the data (data transformation "requirement")
-- Filter (or don't filter) out exonerated/unsubstantiated claims
+- ⭐ Filter (or don't filter) out exonerated/unsubstantiated claims 
