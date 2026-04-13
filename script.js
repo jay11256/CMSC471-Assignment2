@@ -31,7 +31,7 @@ d3.json("data/processed_allegations.json").then(data => {
         .attr("x", -height / 2)
         .attr("class", "axis-label")
         .style("text-anchor", "middle")
-        .text("TOTAL COMPLAINT VOLUME");
+        .text("NUMBER OF COMPLAINTS");
 
     whiteSvg.append("text")
         .attr("y", height + margin.bottom - 5)
@@ -120,12 +120,13 @@ d3.json("data/race_complaints.json").then(data => {
         .attr("x", -height / 2)
         .attr("class", "axis-label")
         .style("text-anchor", "middle")
-        .text("TOTAL COMPLAINT VOLUME");
+        .text("NUMBER OF COMPLAINTS");
 
-    const legend = d3.select("#black-legend");
-    data.forEach((d, i) => {
-        legend.append("div")
-            .attr("class", "legend-item")
-            .html(`<div class="legend-color" style="background:${palette[i % palette.length]}; width:12px; height:12px; border-radius:50%"></div><span class="legend-text">${d.ethnicity}</span>`);
-    });
+    blackSvg.append("text")
+        .attr("y", height + margin.bottom - 5)
+        .attr("x", width / 2)
+        .attr("class", "axis-label")
+        .style("text-anchor", "middle")
+        .text("RACE OF MOS");
+    
 });
